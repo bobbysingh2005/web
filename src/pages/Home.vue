@@ -16,18 +16,50 @@ so as to adapt to the company's requirements in order to grow as a team and keep
 </div>
 </div>
 <div class="row">
-<h2>Our Projects </h2>
+<h2>Our repositories</h2>
 <div class="col">
-<router-link to="/edu-app">EDUApp</router-link>
+<div class="card">
+<div class="card-header">EduApp</div>
+<div class="card-body">
+eduApp is management software which helps education providers like schoole, colleges and other classes, it helps to manage complex functions such as timetable, attendance, fees, notifications, staff, salary, etc.
+</div>
+<div class="card-footer">
+<router-link to="/edu-app">Read More...</router-link>
+</div>
+</div>
 </div>
 <div class="col">
-<router-link to="/shree-chat-app" >Shree Chat App</router-link>
+<div class="card">
+<div class="card-header">ShreeChatApp</div>
+<div class="card-body">
+simple chat application, any one use it on local pc
+</div>
+<div class="card-footer">
+<router-link to="/shree-chat-app" >Read More...</router-link>
+</div>
+</div>
 </div>
 <div class="col">
-<router-link to="/shree-eyes">shree-eyes</router-link>
+<div class="card">
+<div class="card-header">ShreeEyeApp</div>
+<div class="card-body">
+Shree EYE app is Artificial Intelligence that Guide and Help to blind people. it's also supports voice command.
+</div>
+<div class="card-footer">
+<router-link to="/shree-eyes">Read More...</router-link>
+</div>
+</div>
 </div>
 <div class="col">
-<router-link to="/shree-eyes-web">shree-eyes-web</router-link>
+<div class="card">
+<div class="card-header">ShreeEyesApp - web</div>
+<div class="card-body">
+this is web base app that's trak all type of activity for shreeEyesApp.
+</div>
+<div class="card-footer">
+<router-link to="/shree-eyes-web">Read More...</router-link>
+</div>
+</div>
 </div>
 </div>
 </div>
