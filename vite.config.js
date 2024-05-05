@@ -14,6 +14,7 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   server: { host: "0.0.0.0", hot: true, port: 80 },
+  outDir: "docs",
   plugins: [vue(), vueJsx()],
   resolve: {
     alias: {
