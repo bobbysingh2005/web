@@ -2,10 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 import { HomeView, PageNotFound } from "../pages";
 
 export const router = createRouter({
-  base: "/web/", // Adjust this to '/'
+  base: "/web", // Adjust this to '/'
   history: createWebHistory(import.meta.env.BASE_URL),
   linkActiveClass: "active",
-  publicPath: './web/',
+  publicPath: '/web',
   routes: [
     { path: "/", name: "Home", component: HomeView },
     {
