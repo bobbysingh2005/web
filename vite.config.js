@@ -15,9 +15,7 @@ import path from "path";
 export default defineConfig({
   server: { host: "0.0.0.0", hot: true, port: 80 },
   build: {
-    base: './',
     outDir: "docs",
-    publicPath: "./web",
   },
   plugins: [vue(), vueJsx()],
   resolve: {

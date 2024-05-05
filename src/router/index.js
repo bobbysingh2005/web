@@ -4,7 +4,6 @@ import { HomeView, PageNotFound } from "../pages";
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   linkActiveClass: "active",
-  publicPath: './',
   routes: [
     { path: "/", name: "Home", component: HomeView },
     {
