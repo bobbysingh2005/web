@@ -5,6 +5,7 @@ export const router = createRouter({
   base: "/web/", // Adjust this to '/'
   history: createWebHistory(import.meta.env.BASE_URL),
   linkActiveClass: "active",
+  publicPath: './web/',
   routes: [
     { path: "/", name: "Home", component: HomeView },
     {
