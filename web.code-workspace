@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "main",
+			"path": "."
+		},{
+			"name": "my-web",
+			"path": "./src"
+		}
+	],
+	"settings": {}
+}
