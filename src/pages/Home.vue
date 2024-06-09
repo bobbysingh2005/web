@@ -12,7 +12,8 @@
                 <ul>
                     <li>{{ workExperience }}</li>
                 </ul>
-                <h3>Our Repositories</h3>
+                <h3>This is My Hobby Project: Repositories</h3>
+                <p>Note: Whenever I find spare time, I work on these repositories. Thus, they are unpublished and incomplete projects due to the limited time I have available to dedicate to them.</p>
                 <ul>
                     <li><a href="#">EduApp</a> - Management software for educational institutions.</li>
                     <li><a href="#">ShreeChatApp</a> - Simple chat application for local PC use.</li>
