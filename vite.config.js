@@ -13,9 +13,18 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: { host: "0.0.0.0", hot: true, port: 80 },
+  server: {
+    host: "0.0.0.0",
+    hot: true,
+    // port: 80
+  },
   build: {
     outDir: "docs",
+    rollupOptions: {
+      external: [
+        "@popperjs/core"
+      ],
+    },
   },
   plugins: [vue(), vueJsx()],
   resolve: {

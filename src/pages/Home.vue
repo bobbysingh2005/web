@@ -24,14 +24,20 @@
                 <p>LinkedIn: <a :href="linkedinURL" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"
                             aria-hidden="true"></i> {{ linkedin }}</a></p>
                 <p>Skype: <i class="fab fa-skype" aria-hidden="true"></i> {{ skype }}</p>
-                <p><strong>Accessibility Experience:</strong> NVDA Screen Reader (3 years)</p>
+                <p>
+                <strong>
+                Accessibility Experience:</strong> 
+                <a href="/NVDAJurny">
+                NVDA Screen Reader ({{startYear}} years)
+                </a>
+                </p>
             </div>
         </transition>
     </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 const title = ref('Bobby Singh');
 const description = ref('Passionate technologist with over 25 years of experience, possessing a strong dedication to continuous learning and innovation.');
@@ -46,6 +52,10 @@ const linkedinURL = `https://www.linkedin.com/in/${linkedin.value}/`;
 const toggleVisibility = () => {
     isVisible.value = !isVisible.value;
 };
+const startYear = computed(()=>{
+const currentYear = new Date().getFullYear();
+return (currentYear - 2019)
+});//end
 </script>
 
 <style>
