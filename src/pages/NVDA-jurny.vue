@@ -30,7 +30,7 @@
         Today, I continue improving my skills and proving that <strong>blind people can learn, build, and lead</strong>. If you’ve lost your vision, don’t give up. There’s a path forward—and NVDA can help light the way.
       </p>
       <p class="signature">
-        <a href="/" > - Bobby Singh</a>
+        <router-link to="/" > - Bobby Singh</router-link>
       </p>
     </article>
   </section>

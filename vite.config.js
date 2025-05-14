@@ -22,7 +22,7 @@ export default defineConfig({
     outDir: "docs",
     rollupOptions: {
       external: [
-        // "@popperjs/core"
+        "@popperjs/core"
       ],
     },
   },

@@ -1,10 +1,14 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import { HomeView, NVDAJurny, PageNotFound } from "../pages";
 
-// Create and export the Vue Router instance
+// Default app title
+const defaultTitle = "Welcome Bobby Singh - Profile";
+
+// Vue Router setup
 export const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL), // Uses HTML5 history API (no hash in URLs)
-  linkActiveClass: "active", // Adds this class to the active nav link
+  history: createWebHashHistory(), //  Hash routing for GitHub Pages
+  linkActiveClass: "active",
+  scrollBehavior: () => ({ top: 0 }),
 
   routes: [
     {
@@ -12,13 +16,13 @@ export const router = createRouter({
       name: "Home",
       component: HomeView,
       meta: {
-        title: "Home", // Page title
-        description: "Welcome to the homepage.", // SEO meta description
-        keywords: "home, vue, accessibility", // Optional SEO keywords
+        title: "Home",
+        description: "Welcome to the homepage.",
+        keywords: "home, vue, accessibility",
       },
     },
     {
-      path: "/NVDAJurny",
+      path: "/nvda-jurny",
       name: "NvdaJurny",
       component: NVDAJurny,
       meta: {
@@ -30,78 +34,42 @@ export const router = createRouter({
       },
     },
     {
-      path: "/edu-app",
-      name: "eduApp",
-      component: () => import("../pages/ComingSoon.vue"),
+      path: "/:catchAll(.*)",
+      name: "PageNotFound",
+      component: PageNotFound,
       meta: {
-        title: "Edu App (Coming Soon)",
+        title: "Page Not Found",
+        description: "The page you are looking for does not exist.",
       },
     },
-    {
-      path: "/shree-eyes",
-      name: "ShreeEyes",
-      component: () => import("../pages/ComingSoon.vue"),
-      meta: {
-        title: "Shree Eyes (Coming Soon)",
-      },
-    },
-    {
-      path: "/shree-eyes-web",
-      name: "ShreeEyesWeb",
-      component: () => import("../pages/ComingSoon.vue"),
-      meta: {
-        title: "Shree Eyes Web (Coming Soon)",
-      },
-    },
-    {
-      path: "/shree-chat-app",
-      name: "ShreeChatApp",
-      component: () => import("../pages/ComingSoon.vue"),
-      meta: {
-        title: "Shree Chat App (Coming Soon)",
-      },
-    },
-    // Optional 404 Page – Uncomment if needed
-    // {
-    //   path: "/:catchAll(.*)",
-    //   name: "PageNotFound",
-    //   component: PageNotFound,
-    //   meta: {
-    //     title: "Page Not Found"
-    //   }
-    // },
   ],
 });
 
-//
-// Global Navigation Guard
-// This runs before every route change
-// Used here to set the <title> and <meta> tags dynamically for SEO & accessibility
-//
+// Set dynamic page title and meta tags for SEO and accessibility
 router.beforeEach((to, from, next) => {
-  const defaultTitle = "Welcome Bobby singh - Profile"; // Set your app's default/fallback title
-  const meta = to.meta || {}; // Get metadata from route
+  const meta = to.meta || {};
+  document.documentElement.lang = "en";
 
-  // Set document <title>
+  // Set document title
   if (meta.title) {
-    document.title = `${defaultTitle} - ${meta.title}`;
+    document.title =
+      meta.title === "Home"
+        ? defaultTitle
+        : `${meta.title} - ${defaultTitle}`;
+  } else {
+    document.title = defaultTitle;
   }
 
-  // Set or update <meta name="description">
+  // Set/update meta tags
   updateMetaTag("description", meta.description || "");
-
-  // Set or update <meta name="keywords">
   updateMetaTag("keywords", meta.keywords || "");
 
-  next(); // Proceed to the route
+  next();
 });
 
-//
-// Helper function to create or update a meta tag by name
-// If tag exists, updates content
-// If tag doesn't exist, creates and appends it to <head>
-//
+// Helper to update or add meta tags
 function updateMetaTag(name, content) {
+  if (!content) return;
   let tag = document.querySelector(`meta[name="${name}"]`);
   if (tag) {
     tag.setAttribute("content", content);

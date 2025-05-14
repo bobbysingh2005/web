@@ -15,10 +15,11 @@
                 <h3>This is My Hobby Project: Repositories</h3>
                 <p>Note: Whenever I find spare time, I work on these repositories. Thus, they are unpublished and incomplete projects due to the limited time I have available to dedicate to them.</p>
                 <ul>
-                    <li><a href="#">EduApp</a> - Management software for educational institutions.</li>
-                    <li><a href="#">ShreeChatApp</a> - Simple chat application for local PC use.</li>
-                    <li><a href="#">ShreeEyeApp</a> - Artificial Intelligence app for assisting blind people.</li>
-                    <li><a href="#">ShreeEyesApp - Web</a> - Web-based activity tracker for ShreeEyeApp.</li>
+                    <li>
+                        <router-link to="/eduApp">EduApp</router-link> - Management software for educational institutions.</li>
+                    <li><router-link to="/shreeChat">ShreeChatApp</router-link> - Simple chat application for local PC use.</li>
+                    <li><router-link to="shreeEyes">ShreeEyeApp</router-link> - Artificial Intelligence app for assisting blind people.</li>
+                    <li><router-link to="/shreeEyesWeb">ShreeEyesApp - Web</router-link> - Web-based activity tracker for ShreeEyeApp.</li>
                 </ul>
                 <h3>Connect with Me</h3>
                 <p>LinkedIn: <a :href="linkedinURL" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"
@@ -27,9 +28,9 @@
                 <p>
                 <strong>
                 Accessibility Experience:</strong> 
-                <a href="/NVDAJurny">
+                <router-link to="/nvda-jurny">
                 NVDA Screen Reader ({{startYear}} years)
-                </a>
+                </router-link>
                 </p>
             </div>
         </transition>
