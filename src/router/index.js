@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import { HomeView, NVDAJurny, PageNotFound } from "../pages";
+import { HomeView, NvdaJourney, PageNotFound } from "../pages";
 
 // Default app title
 const defaultTitle = "Welcome Bobby Singh - Profile";
@@ -22,9 +22,9 @@ export const router = createRouter({
       },
     },
     {
-      path: "/nvda-jurny",
-      name: "NvdaJurny",
-      component: NVDAJurny,
+      path: "/NVDA-journey",
+      name: "NvdaJourney",
+      component: NvdaJourney,
       meta: {
         title: "NVDA Screen Reader - Journey",
         description:

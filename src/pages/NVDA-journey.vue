@@ -41,7 +41,7 @@
 </script>
 
 <style scoped>
-.nvda-journey {
+.NVDA-journey{
   max-width: 800px;
   margin: auto;
   padding: 1.5rem;

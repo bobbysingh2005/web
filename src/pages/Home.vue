@@ -28,7 +28,7 @@
                 <p>
                 <strong>
                 Accessibility Experience:</strong> 
-                <router-link to="/nvda-jurny">
+                <router-link to="/NVDA-journey">
                 NVDA Screen Reader ({{startYear}} years)
                 </router-link>
                 </p>
