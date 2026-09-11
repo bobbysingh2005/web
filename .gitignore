@@ -12,9 +12,24 @@ dist
 dist-ssr
 *.local
 
+# Agent files (local only, not committed)
+AGENTS.md
+agents.md
+
+# Vite / build tooling caches
+.vite/
+*.tsbuildinfo
+.eslintcache
+coverage/
+
+# Local planning files (not committed)
+.plans/
+
+# Local documents (not committed)
+.documents/
+
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
+.vscode/
 .idea
 .DS_Store
 *.suo
@@ -22,3 +37,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Workspace (local only, not committed)
+web.code-workspace
+
+# Old build backup (renamed to hidden folder, not committed)
+.archive/
+.archive

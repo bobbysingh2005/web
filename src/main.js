@@ -9,6 +9,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Import Bootstrap JS
 import 'bootstrap';
 
+// Import Font Awesome CSS so the decorative icons used on the pages render
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 //global custome variable
 const isDevMode = import.meta.env.VITE_APP_MODE === 'development';
