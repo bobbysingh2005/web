@@ -1,33 +1,16 @@
 <template>
-<div id="EduApp">
-<h1>Coming Soon</h1>
-<p>
-content writing work is ongoing{{ dots }}
-</p>
-{{ counter(count+1)}}
-</div>
+  <ProjectDetails v-if="project" v-bind="project" />
 </template>
 
-<script>
-const timer = {
-    el: "#EduApp",
-    data () {
-        return {
-            count: 0,
-            dots: '...'
-            }
-    },
-    methods: {
-        counter(arg){
-            setTimeout(()=>{
-                let dt = ["",".","..","..."];
-                this.dots = dt[arg % 4]
-            this.count = arg;
-            },2000);
-        }
-        
-    },
-};//end;
+<script setup>
+/*
+ * EduApp project page.
+ *
+ * All content lives in src/data/projects.js so it stays in sync with the
+ * Home and Projects pages.
+ */
+import ProjectDetails from "@/components/ProjectDetails.vue";
+import { projectBySlug } from "@/data/projects";
 
-export default timer;
+const project = projectBySlug("eduApp");
 </script>
